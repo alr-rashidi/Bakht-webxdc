@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Luck</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="title" id="t-title">Luck</h1>
+      <div class="tabs" role="tablist">
+        <button class="tab active" id="tab-wheel" type="button" role="tab" aria-selected="true">
+          <span id="t-tab-wheel">Wheel</span>
+        </button>
+        <button class="tab" id="tab-number" type="button" role="tab" aria-selected="false">
+          <span id="t-tab-number">Number</span>
+        </button>
+      </div>
+
+      <div class="header-controls">
+        <label class="checkbox-row" id="send-row">
+          <input type="checkbox" id="send-chat" />
+          <span id="t-send-chat">Send result to the chat</span>
+        </label>
+        <button id="lang-btn" class="lang-btn" type="button" title="تغییر زبان / Change language">
+          🌐
+        </button>
+      </div>
+    </header>
+
+    <section id="modes">
+      <!-- Wheel mode -->
+      <section id="mode-wheel" class="mode">
+        <div class="wheel-wrap">
+          <canvas class="wheel-canvas" id="wheel" width="800" height="800"></canvas>
+          <div class="arrow" id="arrow">
+            <svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+              <polygon id="arrow-poly" points="30,4 30,30 6,17" fill="#e5484d" stroke="#0b0d12" stroke-width="1.5"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <button class="center-btn" id="spin-btn" type="button" disabled>
+            <span id="t-spin">Spin</span>
+          </button>
+        </div>
+
+        <div class="hint-container">
+          <div class="hint" id="hint"></div>
+        </div>
+
+        <div class="field">
+          <label for="options" id="t-textarea-label">Options (one per line)</label>
+          <textarea id="options" dir="auto" spellcheck="false"></textarea>
+        </div>
+      </section>
+
+      <!-- Number mode -->
+      <section id="mode-number" class="mode hide" hidden>
+        <div class="number-wrap">
+          <div class="number-display" id="number-display">??</div>
+        </div>
+
+        <div class="hint-container">
+          <div class="hint" id="num-hint"></div>
+        </div>
+
+        <div class="number-form">
+          <div class="range-row">
+            <div class="field">
+              <label for="num-min" id="t-min-label">Min</label>
+              <input type="number" id="num-min" value="1" />
+            </div>
+            <div class="field">
+              <label for="num-max" id="t-max-label">Max</label>
+              <input type="number" id="num-max" value="100" />
+            </div>
+          </div>
+          <button class="btn primary pick-btn" id="pick-btn" type="button">
+            <span id="t-pick">Pick</span>
+          </button>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <!-- Result modal (after local spin) -->
+  <div class="modal-backdrop" id="result-modal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h2 id="t-result-title">Result</h2>
+      <div class="winner" id="result-winner" dir="auto"></div>
+      <div class="actions">
+        <button class="btn primary" id="result-close" type="button">
+          <span id="t-close-1">Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared result modal (opened via href) -->
+  <div class="modal-backdrop" id="shared-modal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h2 id="t-shared-title">Result</h2>
+      <div class="winner" id="shared-winner" dir="auto"></div>
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 6px" id="shared-list-label">
+        Options
+      </div>
+      <div class="options-list" id="shared-options" dir="auto"></div>
+      <div class="actions">
+        <button class="btn" id="shared-close" type="button">
+          <span id="t-close-2">Close</span>
+        </button>
+        <button class="btn primary" id="shared-try" type="button">
+          <span id="t-shared-try">Try these options</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./webxdc.js"></script>
+  <script src="./i18n.js"></script>
+  <script src="./shoehorn.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
