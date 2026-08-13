@@ -465,10 +465,7 @@
   if (langBtn) {
     langBtn.addEventListener("click", () => {
       const currentLang = window.__I18N__.lang;
-      const options = [
-        { code: "fa", name: "فارسی" },
-        { code: "en", name: "English" }
-      ];
+      const options = window.availableLanguages || [];
       let html = '<select id="lang-select" class="select">';
       options.forEach(opt => {
         const selected = opt.code === currentLang ? ' selected' : '';

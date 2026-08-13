@@ -3,6 +3,7 @@
     fa: {
       lang: "fa",
       dir: "rtl",
+      lang_name: "فارسی",
       app_title: "بخت",
       tab_wheel: "گردونه",
       tab_number: "عدد",
@@ -31,6 +32,7 @@
     en: {
       lang: "en",
       dir: "ltr",
+      lang_name: "English",
       app_title: "Bakht",
       tab_wheel: "Wheel",
       tab_number: "Number",
@@ -112,6 +114,9 @@
     return true;
   };
 
-  // Expose available languages
-  window.availableLanguages = Object.keys(dict);
+  // Expose available languages with their display names
+  window.availableLanguages = Object.keys(dict).map((code) => ({
+    code,
+    name: dict[code].lang_name || code,
+  }));
 })();
