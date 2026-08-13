@@ -269,7 +269,7 @@ body {
 }
 
 .center-btn:active:not(:disabled) {
-  transform: translate(-50%, -50%) scale(0.92);
+  transform: translate(calc(-50% + 2px), calc(-50% + 2px));
   box-shadow: var(--neo-shadow-sm);
 }
 
@@ -625,7 +625,19 @@ textarea {
   box-shadow: 10px 10px 0px var(--shadow-color);
   width: 90%;
   max-width: 380px;
-  animation: neoPop 200ms ease;
+  animation: langPop 200ms ease;
+}
+
+@keyframes langPop {
+  from {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 
 .lang-modal h3 {
