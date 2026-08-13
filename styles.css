@@ -1,7 +1,6 @@
 :root {
   color-scheme: light dark;
 
-  /* Neo-Brutalism Color Palette */
   --primary: light-dark(#ffde59, #ffde59);
   --primary-hover: light-dark(#ffe680, #ffe680);
   --bg: light-dark(#fffbeb, #121212);
@@ -101,8 +100,8 @@ html {
   display: inline-block;
 }
 
-/* Tabs - Neo Brutalism Style */
 .tabs {
+  direction: ltr;
   display: inline-flex;
   background: var(--surface);
   border: var(--neo-border-width) solid var(--border);
@@ -141,7 +140,6 @@ html {
   box-shadow: var(--neo-shadow-sm);
 }
 
-/* Header Controls */
 .header-controls {
   display: flex;
   gap: 14px;
@@ -151,7 +149,6 @@ html {
   max-width: 440px;
 }
 
-/* Language Button - Neo Brutalist */
 .lang-btn {
   background: var(--red);
   border: var(--neo-border-width) solid var(--border);
@@ -181,7 +178,6 @@ html {
   box-shadow: 1px 1px 0px var(--shadow-color);
 }
 
-/* Modes container */
 #modes {
   direction: ltr;
   display: flex;
@@ -199,7 +195,6 @@ html {
   transition: var(--transition);
 }
 
-/* Wheel Wrap - Neo-Brutalist Frame */
 .wheel-wrap {
   position: relative;
   width: 100%;
@@ -224,7 +219,6 @@ html {
   box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Arrow indicator */
 .arrow {
   position: absolute;
   top: 50%;
@@ -243,7 +237,6 @@ html {
   display: block;
 }
 
-/* Center Button inside Wheel */
 .center-btn {
   position: absolute;
   top: 50%;
@@ -285,7 +278,6 @@ html {
   box-shadow: none;
 }
 
-/* Number mode container */
 .number-wrap {
   width: 100%;
   flex: 1;
@@ -337,7 +329,6 @@ html {
   gap: 14px;
 }
 
-/* Form Inputs - Neo Brutalism */
 input[type="number"],
 textarea {
   width: 100%;
@@ -374,7 +365,6 @@ textarea {
   line-height: 1.6;
 }
 
-/* Buttons - Neo Brutalist */
 .btn {
   padding: 12px 20px;
   border-radius: 12px;
@@ -436,7 +426,6 @@ textarea {
   transform: none;
 }
 
-/* Fields & Labels */
 .field {
   display: flex;
   flex-direction: column;
@@ -451,7 +440,6 @@ textarea {
   letter-spacing: 0.03em;
 }
 
-/* Checkbox Row - Neo Brutalist */
 .checkbox-row {
   display: flex;
   flex: 1;
@@ -489,7 +477,6 @@ textarea {
   box-shadow: none;
 }
 
-/* Hint */
 .hint-container {
   position: relative;
   height: 5rem;
@@ -514,7 +501,6 @@ textarea {
   transition: .1s;
 }
 
-/* Modal - Neo Brutalism Pop-up */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -619,7 +605,6 @@ textarea {
   flex-wrap: wrap;
 }
 
-/* Language Modal */
 .lang-modal {
   position: fixed;
   top: 50%;
@@ -693,7 +678,6 @@ textarea {
   pointer-events: none;
 }
 
-/* Select Styling */
 .select {
   padding: 10px;
   font-size: 16px;
