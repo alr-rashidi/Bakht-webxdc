@@ -494,13 +494,16 @@ textarea {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  padding: .2rem .6rem;
+  border-radius: 100rem;
   color: var(--muted);
   background-color: var(--bg);
   font-size: 1rem;
   font-weight: 700;
-  margin: 1.5rem 0 0.5rem;
+  margin: 1rem 0;
   text-align: center;
   min-height: 22px;
+  transition: .1s;
 }
 
 /* Modal - Neo Brutalism Pop-up */

@@ -1,4 +1,4 @@
-(function() {
+(function () {
   const { t, lang, dir } = window.__I18N__;
 
   // Apply language/dir + all i18n text
@@ -149,8 +149,10 @@
   function updateSpinEnabled() {
     const ok = options.length >= 2 && !spinning;
     spinBtn.disabled = !ok;
-    if (options.length < 2 && !spinning) hint.textContent = t("need_more");
-    else hint.textContent = "";
+    if (options.length < 2 && !spinning) {
+      hint.classList.remove("hide");
+      hint.textContent = t("need_more");
+    } else hint.classList.add("hide");
   }
 
   function onOptionsChanged() {
@@ -168,7 +170,6 @@
     textarea.disabled = true;
     sendChat.disabled = true;
     sendRow.classList.add("disabled");
-    hint.textContent = "";
 
     const n = options.length;
     const slice = (Math.PI * 2) / n;
@@ -280,8 +281,10 @@
     }
     const r = validRange();
     pickBtn.disabled = !r || picking;
-    if (!r && !picking) numHint.textContent = t("invalid_range");
-    else numHint.textContent = "";
+    if (!r && !picking) {
+      numHint.classList.remove("hide");
+      numHint.textContent = t("invalid_range");
+    } else numHint.classList.add("hide");
   }
   numMin.addEventListener("input", updatePickEnabled);
   numMax.addEventListener("input", updatePickEnabled);
@@ -298,10 +301,9 @@
     numHint.textContent = "";
 
     const [a, b] = r;
-    const finalValue = String(randInt(a, b, Number(numDisplay.innerText))).padStart(
-      numMax.value.length,
-      "0",
-    );
+    const finalValue = String(
+      randInt(a, b, Number(numDisplay.innerText)),
+    ).padStart(numMax.value.length, "0");
     const totalDur = 3200;
     const t0 = performance.now();
     // interval starts fast (~60ms) then slows to ~500ms
@@ -333,7 +335,7 @@
         let v = String(randInt(a, b, Number(numDisplay.innerText))).padStart(
           numMax.value.length,
           "0",
-        )
+        );
         if (v === finalValue && b - a > 0) v = v === a ? b : a;
         numDisplay.textContent = String(v);
       }
@@ -467,14 +469,14 @@
       const currentLang = window.__I18N__.lang;
       const options = window.availableLanguages || [];
       let html = '<select id="lang-select" class="select">';
-      options.forEach(opt => {
-        const selected = opt.code === currentLang ? ' selected' : '';
+      options.forEach((opt) => {
+        const selected = opt.code === currentLang ? " selected" : "";
         html += `<option value="${opt.code}"${selected}>${opt.name}</option>`;
       });
-      html += '</select>';
+      html += "</select>";
 
       const langModal = document.createElement("div");
-      langModal.classList.add("lang-modal")
+      langModal.classList.add("lang-modal");
       langModal.innerHTML = t("lang_title") + ":" + html;
 
       document.body.appendChild(langModal);
