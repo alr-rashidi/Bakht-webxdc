@@ -16,6 +16,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Update manifest.toml version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}   # removes the leading "v"
+          echo "Updating version to $VERSION"
+          # Remove old version line if it exists
+          sed -i '/^version = /d' manifest.toml
+          # Add version at the last line
+          echo "version = \"$VERSION\"" >> manifest.toml
+          cat manifest.toml
+
       - name: Build .xdc file
         run: |
           zip -r Bakht.xdc . \
