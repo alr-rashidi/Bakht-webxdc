@@ -489,7 +489,7 @@ textarea {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  padding: .2rem .6rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 100rem;
   color: var(--muted);
   background-color: var(--bg);
@@ -498,7 +498,7 @@ textarea {
   margin: 1rem 0;
   text-align: center;
   min-height: 22px;
-  transition: .1s;
+  transition: 0.1s;
 }
 
 .modal-backdrop {

@@ -105,10 +105,10 @@
   // Switch language + save to localStorage
   window.switchLanguage = function (newLang) {
     if (!dict[newLang]) return false;
-    
+
     currentLang = newLang;
     localStorage.setItem(STORAGE_KEY, newLang); // ← Persist choice
-    
+
     window.__I18N__ = getI18N();
     window.location.reload();
     return true;
