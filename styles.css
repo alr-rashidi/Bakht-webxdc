@@ -34,11 +34,8 @@
   unicode-bidi: plaintext;
 }
 
-html,
 body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg);
+  padding: 24px 16px 60px;
   color: var(--text);
   font-family:
     "Plus Jakarta Sans",
@@ -49,16 +46,15 @@ body {
     Tahoma,
     "Vazirmatn",
     sans-serif;
-  min-height: 100%;
   overflow: hidden;
 }
 
-body {
-  padding: 24px 16px 60px;
+html {
   background-image: radial-gradient(var(--border) 1px, gray 1px);
   background-size: 24px 24px;
   background-position: -19px -19px;
   background-color: var(--bg);
+  overflow: hidden;
 }
 
 .app {
