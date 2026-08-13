@@ -50,6 +50,7 @@ body {
     "Vazirmatn",
     sans-serif;
   min-height: 100%;
+  overflow: hidden;
 }
 
 body {
