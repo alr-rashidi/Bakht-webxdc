@@ -1,4 +1,7 @@
-# Bakht
+<p align="center">
+  <img src="./icon.png" alt="icon">
+</p>
+<h1 align="center">Bakht</h1>
 
 **Bakht** (means "luck" in Persian) is a [webxdc](https://webxdc.org) app that runs inside **Delta Chat**, providing two methods for making random decisions:
 
