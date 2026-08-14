@@ -5,19 +5,14 @@
 
 **Bakht** (means "luck" in Persian) is a [webxdc](https://webxdc.org) app that runs inside **Delta Chat**, providing two methods for making random decisions:
 
-- 🎡 **Wheel** — enter your options (one per line, up to 50) and spin the wheel to pick a winner.
-- 🔢 **Number** — pick a random number within any range (up to 1,000,000,000).
+- 🎡 **Spin wheel** — With animated acceleration and deceleration physics  
+- 🎰 **Random number picker** — With a rolling “slot machine” animation  
+- 📤 **Optional share results to the chat** — The options and winning result are posted as a webxdc update, so other chat members can open it and try the same options themselves  
+- 🌐 **Multi-language support** — All UI text is managed through i18n files
 
 ## Screenshot
 
 ![screenshot](./git-assets/screenshot.webp)
-
-## Features
-
-- **Spin wheel** - With animated acceleration and deceleration physics
-- **Random number picker** - With a rolling "slot machine" animation
-- **Optional share results to the chat** - The options and winning result is posted as a webxdc update, so other chat members can open it and *try the same options themselves*
-- **Multi-language support** - All UI text is managed through i18n files
 
 ## Development
 
