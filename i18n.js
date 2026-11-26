@@ -65,20 +65,23 @@
   function detectLanguage() {
     // 1. Check saved preference
     const savedLang = localStorage.getItem(STORAGE_KEY);
-    if (savedLang && dict[savedLang]) {
-      return savedLang;
-    }
+    if (savedLang && dict[savedLang]) return savedLang;
 
     // 2. Auto-detect from browser
-    const navLang = (navigator.language || "fa").toLowerCase();
-    for (const code in dict) {
-      if (navLang.startsWith(code) || navLang === code) {
-        return code;
-      }
+    const preferred =
+      navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || navigator.userLanguage || ""];
+
+    for (const tag of preferred) {
+      if (!tag) continue;
+      const lang = tag.toLowerCase().split("-")[0];
+
+      if (dict[lang]) return lang;
     }
 
-    // 3. Default fallback
-    return "fa";
+    // 3. Fallback to English
+    return "en";
   }
 
   let currentLang = detectLanguage();
